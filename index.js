@@ -213,7 +213,7 @@ function buildSwaggerRequest(docEntity, moduleId, basePath, routeDef) {
 }
 
 function buildModuleRoutes(docEntity, moduleRoutes) {
-  const moduleId = moduleRoutes.basePath.substring(1).replace(/\//, '-');
+  const moduleId =  moduleRoutes.tag || moduleRoutes.basePath.substring(1).replace(/\//, '-');
 
   docEntity.tags.push({
     name: moduleId,
